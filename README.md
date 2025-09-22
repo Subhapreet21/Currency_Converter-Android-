@@ -1586,34 +1586,6 @@ Our app supports both a light and a dark mode, which is handled by having two `t
 *   You can then *customize* specific parts of the theme by adding `<item>` tags (e.g., setting a `colorPrimary`). Our app uses the defaults provided by `Material3` for simplicity.
 *   **How it's used:** In your `AndroidManifest.xml` (which we'll cover in [Chapter 7: Android Application Configuration](07_android_application_configuration_.md)), you tell the entire app which theme to use. This makes all your UI elements (buttons, text fields, etc.) automatically adopt the theme's defined styles.
 
-### How Android Puts It All Together
-
-When your app starts, Android's system takes your XML layout definitions (from [Chapter 5: Android UI Layout Definitions](05_android_ui_layout_definitions_.md)) and combines them with all these visual assets and styling rules.
-
-```mermaid
-graph TD
-    A[XML Layouts (activity_main.xml)] --> B[Android System]
-    C[Colors (colors.xml)] --> B
-    D[Strings (strings.xml)] --> B
-    E[Drawables (ic_logo.xml, gradient_background.xml)] --> B
-    F[Themes (themes.xml)] --> B
-    B --> G[Final App UI on Screen]
-
-    style A fill:#ADD8E6,stroke:#333,stroke-width:2px
-    style C fill:#FFDDC1,stroke:#333,stroke-width:2px
-    style D fill:#C1FFDDC1,stroke:#333,stroke-width:2px
-    style E fill:#D1FFDDC1,stroke:#333,stroke-width:2px
-    style F fill:#E1FFDDC1,stroke:#333,stroke-width:2px
-    style G fill:#90EE90,stroke:#333,stroke-width:2px
-```
-
-*   The `Android System` acts like a conductor. It reads your UI blueprints (`XML Layouts`).
-*   Whenever a layout needs a color, text, or image, it looks it up in `colors.xml`, `strings.xml`, or the `drawable` folder.
-*   The `Themes` provide the overarching style guide for all components.
-*   Finally, the system draws everything onto the `Phone Screen`, creating the beautiful and functional user interface you interact with.
-
-This organized approach means your app's visual identity is consistent, easily maintainable, and adaptable (like supporting dark mode) without having to manually change every single UI element.
-
 ### Conclusion
 
 In this chapter, we've explored **Application Visual Assets & Styling**, which are crucial for giving our app its unique and polished look. We learned about:
